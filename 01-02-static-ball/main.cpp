@@ -5,7 +5,7 @@
 int main( int argc, char *argv[] ){
 	std::cout << "Starting application 01-02 static ball\n";
 
-	sf::RenderWindow window{ sf::VideoMode{ 640, 480 }, "SFML window" };
+	sf::RenderWindow window{ sf::VideoMode{ 640, 480 }, "SFML window", sf::Style::None};
 	ball my_ball{ sf::Vector2f{ 320.0, 240.0 } };
 
 	window.clear();
