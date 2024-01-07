@@ -23,6 +23,12 @@ jobs:
 
     - name: Compile hello world with SFML
       run: |
-        mkdir build
+        mkdir -p build
         cd 01-01-hello-world
         g++ -o ../build/hello-world *.cpp -lsfml-graphics -lsfml-window -lsfml-system
+
+    - name: Archive build artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        name: hello-world-artifact
+        path: build
