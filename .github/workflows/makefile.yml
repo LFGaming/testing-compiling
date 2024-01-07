@@ -24,6 +24,6 @@ jobs:
     - name: Build and run hello world with SFML
       run: |
         mkdir build
-        cd 01-01-hello-world
-        g++ -o ../build/hello-world main.cpp -lsfml-graphics -lsfml-window -lsfml-system
-        ../build/hello-world
+        cd 01-02-static-ball
+        g++ -o ../build/static-ball main.cpp -lsfml-graphics -lsfml-window -lsfml-system
+        ../build/static-ball
