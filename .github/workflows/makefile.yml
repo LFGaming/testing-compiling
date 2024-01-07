@@ -1,4 +1,4 @@
-name: C++ Build with SFML
+name: C++ Build without Running
 
 on: [push, pull_request]
 
@@ -21,9 +21,8 @@ jobs:
     - name: Install SFML dependencies
       run: sudo apt-get install -y libsfml-dev
 
-    - name: Build and run hello world with SFML
+    - name: Compile hello world with SFML
       run: |
         mkdir build
-        cd 01-02-static-ball
+        cd 01-01-hello-world
         g++ -o ../build/hello-world *.cpp -lsfml-graphics -lsfml-window -lsfml-system
-        ../build/hello-world
