@@ -1,26 +1,23 @@
-name: Makefile CI
+name: C++ Build
 
-on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+on: [push, pull_request]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
+    - name: Checkout repository
+      uses: actions/checkout@v2
 
-    # - name: configure
-    #   run: ./configure
+    - name: Set up C++ compiler
+      uses: actions/setup-cpp@v1
+      with:
+        compiler: 'gcc' # or 'clang', depending on your preference
 
-    # - name: Install dependencies
-    #   run: make
-
-    - name: Run install
+    - name: Build and run hello world
       run: |
-        sudo apt-get install libsfml-dev
-        cd 01-01-hello-world && make
+        mkdir build
+        cd 01-01-hello-world
+        g++ -o ../build/hello-world main.cpp
+        ../build/hello-world
